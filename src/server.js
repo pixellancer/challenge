@@ -1,6 +1,9 @@
 'use strict';
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
+
 const registerRoutes = require('./routes');
 
 // server config
@@ -8,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 // register routes
 registerRoutes(app);
+
 
 // create server start method
 const start = () => {
