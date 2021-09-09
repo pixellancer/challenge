@@ -9,7 +9,7 @@ export const Demographic = () => {
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
         <option value="vw">VW</option>
-        <option value="audi" selected>
+        <option value="audi">
           Audi
         </option>
       </select>

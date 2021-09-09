@@ -21,17 +21,17 @@ export const List = () => {
   return (
     <div className='listSection'>
       <section className="listSection__category">
-        {categories.map((item, i) => (
-          <span key={i} className="category__name">
+        {categories.map((item,i) => (
+            <span key={i} className="category__name">
             item
           </span>
         ))}
       </section>
       <section className="listSection__listItems">
-        {items.map((item) => (
-          <div className='listItems__itemRow'>
-            {Object.values(item).map((value) => (
-              <span className='itemRow__itemDetail'>{value}</span>
+        {items.map((item,i) => (
+          <div  key={i} className='listItems__itemRow'>
+            {Object.values(item).map((value,i) => (
+              <span key={i} className='itemRow__itemDetail'>{value}</span>
             ))}
           </div>
         ))}
