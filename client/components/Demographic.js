@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import './DemographicStyle.css'
 import { List } from "./List";
 import { getItems, getListOfAgesOfUsersWith } from "../APIs/APIs";
 
@@ -28,8 +29,16 @@ export const Demographic = () => {
               {item}
             </option>
           ))}
-      </select>
-      <List categories={categories.current} items={ageWithCount}></List>
+          </select>
+          {
+              (categories.current && ageWithCount) ? (
+                  
+                  <List categories={categories.current} items={ageWithCount}></List>
+              ) : (
+                      <></>
+              )
+          }
+      {/* <List categories={categories.current} items={ageWithCount}></List> */}
     </div>
   );
 };

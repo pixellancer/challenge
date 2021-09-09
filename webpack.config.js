@@ -20,16 +20,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
-                use: [{
-                    loader: 'css-loader',
-                    options: {
-                        modules: {
-                            localIdentName: "[name]__[local]___[hash:base64:5]",
-                        },
-                        sourceMap: true
-                    }
-                }, ]
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,

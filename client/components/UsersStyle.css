@@ -1,0 +1,11 @@
+.userInfo{
+    padding: 2rem;
+}
+.userInfo header{
+    padding: 1rem 0;
+    line-height: 2.4rem;
+}
+
+.userInfo__subHeader{
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,21 @@
+.listSection span{
+    display: inline-block;
+    width: 5rem;
+    line-height: 2rem;
+}
+
+.listSection__category, .listItems__itemRow{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+}
+
+.listSection__category{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.listItems__itemRow{
+    border-top: 1px solid rgba(156, 156, 156, 0.733);
+}
