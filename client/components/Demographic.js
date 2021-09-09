@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import './DemographicStyle.css'
+import "./DemographicStyle.css";
 import { List } from "./List";
 import { getItems, getListOfAgesOfUsersWith } from "../APIs/APIs";
 
 export const Demographic = () => {
   const [items, setItems] = useState([]);
-  //   const [categories, setCategories] = useState([]);
   const [ageWithCount, setAgeWithCount] = useState("");
   const categories = useRef(undefined);
   useEffect(() => getItems().then((data) => setItems(data)), []);
@@ -29,15 +28,12 @@ export const Demographic = () => {
               {item}
             </option>
           ))}
-          </select>
-          {
-              (categories.current && ageWithCount) ? (
-                  
-                  <List categories={categories.current} items={ageWithCount}></List>
-              ) : (
-                      <></>
-              )
-          }
+      </select>
+      {categories.current && ageWithCount ? (
+        <List categories={categories.current} items={ageWithCount}></List>
+      ) : (
+        <> </>
+      )}
       {/* <List categories={categories.current} items={ageWithCount}></List> */}
     </div>
   );

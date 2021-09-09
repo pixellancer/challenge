@@ -7,7 +7,7 @@
     "server": "nodemon ./src/index.js",
     "client": "node ./client/index.js",
     "build": "webpack --watch",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server & npm run server"
   },
   "author": "walmex-team",
   "license": "ISC",
