@@ -1,7 +1,8 @@
 import { forEach } from "lodash";
 import React from "react";
 import reactIcon from "../public/favicon.png";
-import { List } from "./components/List";
+import { Users } from "./components/Users";
+import { Demographic } from "./components/Demographic";
 
 export default function App() {
 
@@ -16,10 +17,10 @@ export default function App() {
 
   return (
     <div>
-          <h1> Hello World testinggooo </h1>
-          <List></List>
+          <Users></Users>
+          <Demographic></Demographic>
           <img src={reactIcon} />
-          <button onClick={getRequest}>requests</button>
+          {/* <button onClick={getRequest}>requests</button> */}
     </div>
   );
 }
