@@ -18,8 +18,8 @@ export const getItems = () => {
     }).then(response => response.json())
 }
 
-export const getListOfAgesOfUsersWith = () => {
-    return fetch([baseURL,"users", "age",":item"].join('/'), {
+export const getListOfAgesOfUsersWith = (item) => {
+    return fetch([baseURL,"users", "age",`${item}`].join('/'), {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

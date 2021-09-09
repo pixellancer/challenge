@@ -31,6 +31,7 @@ const getItems = () => {
 };
 
 const getListOfAgesOfUsersWith = (item) => {
+    console.log(item, 22);
     const dataAccessMethod = () => {
         // should return objects array: [{age:12, count:1}, {age:18, count:1}]
         let listOfAgesOfUserWithItem = []
@@ -84,9 +85,8 @@ const getListOfAgesOfUsersWith = (item) => {
         const resultData = Object.entries(itemsWithAgeCount).map(([key, value]) => ({
             [key]: value
         }));
-        console.log('Data ready');
 
-        return resultData;
+        return resultData.filter(ele =>Object.keys(ele)[0] === item)[0]
 
     }
     return mockDBCall(dataAccessMethod);

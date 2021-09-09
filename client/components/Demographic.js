@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { List } from "./List";
+import { getItems, getListOfAgesOfUsersWith } from "../APIs/APIs";
 
 export const Demographic = () => {
-  return (
-    <div className='ageDemographic'>
-      <h1 className="ageDemographic__header">All Users</h1>
-      <select id="ageDemographic__options">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="vw">VW</option>
-        <option value="audi">
-          Audi
-        </option>
-      </select>
+  const [items, setItems] = useState([]);
+  //   const [categories, setCategories] = useState([]);
+  const [ageWithCount, setAgeWithCount] = useState("");
+  const categories = useRef(undefined);
+  useEffect(() => getItems().then((data) => setItems(data)), []);
 
-      <List></List>
+  const optionsHandler = (e) => {
+    const selectedItem = e.target.value;
+    getListOfAgesOfUsersWith(selectedItem).then((data) => {
+      const ageCountObj = Object.values(data)[0][0];
+      categories.current = Object.keys(ageCountObj);
+      setAgeWithCount(Object.values(data)[0]);
+    });
+  };
+
+  return (
+    <div className="ageDemographic">
+      <h1 className="ageDemographic__header">All Users</h1>
+      <select id="ageDemographic__options" onChange={optionsHandler}>
+        {items &&
+          items.map((item, index) => (
+            <option key={index} value={item}>
+              {item}
+            </option>
+          ))}
+      </select>
+      <List categories={categories.current} items={ageWithCount}></List>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const getListOfAgesOfUsersWithHandler = async (request, response) => {
     try {
         // 3. get item name from URL parameters
         const itemToLookup = request.params.item;
-        console.log(request.params);
+        console.log(request.params,'params');
         const data = await mockDBCalls.getListOfAgesOfUsersWith(itemToLookup);
         return response.status(200).send(JSON.stringify(data));
     } catch (err) {
